@@ -1,5 +1,5 @@
 # CIS269_Assignment-6
-Sort Complexity Comparison
+## Sort Complexity Comparison
 
 Part 1: Measure times of sort algorithms. The provided code (sortTimer.cpp) has the STL sort algorithms sort  (merge sort and quick sort) and sort_heap (heap sort) implemented in the code. Make a table (excel or in word) of the run times of the sorts for 1000 elements, 10,000 elements, 100,000 elements, 1,000,000 elements and 10,000,000 elements. Record how long the sort takes for each of the instances.
   1. Both algorithms should have O(n log n) performance, do they?
