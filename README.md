@@ -1,5 +1,5 @@
 # CIS269_Assignment-6
-## Sort Complexity Comparison
+## Selected Sort Complexity
 
 Part 1: Measure times of sort algorithms. The provided code (sortTimer.cpp) has the STL sort algorithms sort  (merge sort and quick sort) and sort_heap (heap sort) implemented in the code. Make a table (excel or in word) of the run times of the sorts for 1000 elements, 10,000 elements, 100,000 elements, 1,000,000 elements and 10,000,000 elements. Record how long the sort takes for each of the instances.
   1. Both algorithms should have O(n log n) performance, do they?
@@ -17,13 +17,13 @@ Part 3: Ordered sort values. The quick sort has poor performance when the list i
   2. Why or why not?
 
 Notes:
-* This driver code adapted from the provided, sortTimer.cpp file.
+* This driver code adapted from the provided "sortTimer.cpp" file.
 * Insertion, selection, comb, counting, and quicksort adapted from the textbook "Data Structures and Algorithms in C++", 4th edition, by Drozdek.
-* Uses C++17 parallel algorithm feature for sort().
+* Uses C++17 parallel algorithm feature for sort(), and/or MSVC parallel patterns library.
 * Benchmark function confirms result is sorted.
-* Compiled for x86 with optimization set for speed: /O2
+* Was compiled for x86 with optimization set for speed: /O2
 * For most accurate timing results, use Release build.
 * Option to redirect output to file by defining: REDIRECT_TO_FILE.
 * Compiled/tested with MS Visual Studio 2017 Community (v141), and Windows SDK version 10.0.17134.0
 * Compiled/tested with Eclipse Oxygen.3a Release (4.7.3a), using CDT 9.4.3 and MinGw gcc-g++ (6.3.0-1).
-Submitted in partial fulfillment of the requirements of PCC CIS-269.
+* Submitted in partial fulfillment of the requirements of PCC CIS-269.
