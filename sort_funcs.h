@@ -46,7 +46,7 @@ template <typename T> void insertionSort(T*, T*); // My insertion sort.
 template <typename T> void combSort(T*, T*);      // My comb sort algorithm.
 template <typename T> void countingSort(T*, T*);  // My counting sort algorithm.
 template <typename T> void quickSort(T*, T*);     // My quicksort algorithm.
-template <typename T> void radixSort(T*, T*);     // My optimized radix sort (based on EASTL) algorith.
+template <typename T> void radixSort(T*, T*);     // My optimized radix sort (based on EASTL) algorithm.
 template <typename T> void pSort(T*, T*);         // PPL or STL C++17 parallel sort algorithm.
 #if (_MSC_VER && __cpp_lib_parallel_algorithm < 201603)
 inline float LogN(float);                         // Parallel quicksort helper function.
@@ -387,14 +387,22 @@ void pSort(T* begin, T* end) { std::sort(std::execution::par_unseq, begin, end);
 *************************************************************************/
 // Implements a classic LSD (least significant digit) radix sort.
 // See http://en.wikipedia.org/wiki/Radix_sort.
-// To consider: A static linked-list implementation may be faster than the version here.
-// The radix_sort implementation uses two optimizations that are not part of a typical radix sort implementation.
-// 1. Computing a histogram (i.e. finding the number of elements per bucket) for the next pass is done in parallel with the loop that "scatters"
-//    elements in the current pass.  The advantage is that it avoids the memory traffic / cache pressure of reading keys in a separate operation.
-//    Note: It would also be possible to compute all histograms in a single pass.  However, that would increase the amount of stack space used and
-//    also increase cache pressure slightly.  However, it could still be faster under some situations.
-// 2. If all elements are mapped to a single bucket, then there is no need to perform a scatter operation.  Instead the elements are left in place
-//    and only copied if they need to be copied to the final output buffer.
+// The radix_sort implementation uses two optimizations that are not part 
+// of a typical radix sort implementation.
+// 1. Computing a histogram (i.e. finding the number of elements per 
+//    bucket) for the next pass is done in parallel with the loop that 
+//    "scatters" elements in the current pass.  The advantage is that it 
+//    avoids the memory traffic / cache pressure of reading keys in a 
+//    separate operation.
+//    Note: It would also be possible to compute all histograms in a 
+//    single pass.  However, that would increase the amount of stack space 
+//    used and also increase cache pressure slightly.  However, it could 
+//    still be faster under some situations.
+// 2. If all elements are mapped to a single bucket, then there is no need 
+//    to perform a scatter operation.  Instead the elements are left in 
+//    place and only copied if they need to be copied to the final output 
+//    buffer.
+
 template <typename T>
 void radixSort(T* begin, T* end)
 {
