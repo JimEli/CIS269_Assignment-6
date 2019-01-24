@@ -20,7 +20,7 @@ The quick sort has poor performance when the list is nearly ordered. Instead of 
   2. Why or why not?
 
 Notes:
-* This driver code adapted from the provided "sortTimer.cpp" file.
+* Driver code adapted from the provided "sortTimer.cpp" file.
 * Insertion, selection, comb, counting, and quicksort adapted from the textbook "Data Structures and Algorithms in C++", 4th edition, by Drozdek.
 * Uses C++17 parallel algorithm feature for sort(), and/or MSVC parallel patterns library.
 * Benchmark function confirms result is sorted.
