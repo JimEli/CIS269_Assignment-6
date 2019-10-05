@@ -22,10 +22,10 @@ The quick sort has poor performance when the list is nearly ordered. Instead of 
 Notes:
 * Driver code adapted from the provided "sortTimer.cpp" file.
 * Insertion, selection, comb, counting, and quicksort adapted from the textbook "Data Structures and Algorithms in C++", 4th edition, by Drozdek.
-* Uses C++17 parallel algorithm feature for sort(), and/or MSVC parallel patterns library.
+* Program uses C++17 parallel algorithm feature for sort(), and/or MSVC parallel patterns library.
 * Benchmark function confirms result is sorted.
 * Was compiled for x86 with optimization set for speed: /O2
-* For most accurate timing results, use Release build.
+* For most accurate timing results, use a Release build.
 * Option to redirect output to file by defining: REDIRECT_TO_FILE.
 * Compiled/tested with MS Visual Studio 2017 Community (v141), and Windows SDK version 10.0.17134.0
 * Compiled/tested with Eclipse Oxygen.3a Release (4.7.3a), using CDT 9.4.3 and MinGw gcc-g++ (6.3.0-1).
